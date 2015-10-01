@@ -2,10 +2,11 @@ class MessagesController < ApplicationController
   def index
     @messages=Message.all
   end
+  
   def create
-    @message=Mwssage.new(message_params)
+    @message=Message.new(message_params)
     @message.save
-    redirect_to root_path , notice: 'メッセージwp保存しました'
+    redirect_to root_path , notice: 'メッセージを保存しました'
   end
   
   private
