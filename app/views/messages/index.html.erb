@@ -15,10 +15,10 @@
 <%= form_for(Message.new) do |f| %>
 
   名前:
-  <%= f.text_field :name %>
+  <%= f.text_area :name, :size=>"10x1" %>
 
   内容：
-  <%= f.text_field :body %>
+  <%= f.text_area :body, :size=>"10x1" %>
   <%= f.submit class:"btn btn-sm btn-primary" %>
 <% end %>
 
