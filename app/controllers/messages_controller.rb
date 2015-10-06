@@ -1,12 +1,16 @@
 class MessagesController < ApplicationController
   def index
-    @messages=Message.all
   end
-  
   def create
     @message=Message.new(message_params)
-    @message.save
-    redirect_to root_path , notice: 'メッセージを保存しました'
+    if @message.save
+      redirect_to root_path , notice: 'メッセージを保存しました'
+    eles
+     #メッセージを保存できなかった時
+     @message=Message.all
+      flash.now[:alert]="メッセージを保存に失敗しました"
+      render 'index'
+    end
   end
   
   private
