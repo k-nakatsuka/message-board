@@ -12,6 +12,16 @@
   </div>
 </div>
 
+<<<<<<< HEAD
+<%= form_for(Message.new) do |f| %>
+
+  名前:
+  <%= f.text_area :name, rows:1 %>
+
+  内容：
+  <%= f.text_area :body, rows:1 %>
+  <%= f.submit class:"btn btn-sm btn-primary" %>
+=======
 <%= form_for(Message.new, html: {class: "form-horizontal"}) do |f| %>
   <div class="form-group">
     <labele class="col-sm-1 control-label">名前:</labele>
@@ -32,6 +42,7 @@
     </div>
   </div>
   
+>>>>>>> challenge1
 <% end %>
 
 
