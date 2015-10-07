@@ -3,54 +3,15 @@
     メッセージ一覧
   </div>
   
-  <div class="panel-body">
-    <% @messages.each do |message| %>
-    <span class="label label-info"><%= message.name %></span>
-    <%= message.body %>
-    <br>
-  <% end %>
+    <div class="panel-body">
+      <% @messages.each do |message| %>
+      <span class="label label-info"><%= message.name %></span>
+      <%= message.body %>
+      <br>
+    <% end %>
   </div>
 </div>
 
-<%= form_for(@message) do |f| %>
+<% #部分テンプレートを読み込んでいる %>
 
-
-<% if @message.errors.present? %>
-
-  <div class="alert alert-danger">
-
-<%= alert %>
-    
-    <ul>
-      
-<% @message.errors.full_messages.each do |full_message| %>
-    
-      <li>
-        
-<%= full_message %>
-      
-      </li>
-
-
-<% end %>    
-    
-    </ul>
-  </div>
-  
-<% end %>
-
-
-    名前：
-   
-<%= f.text_field :name %>
-   
-    内容：
-    
-    
-<%= f.text_field :body %>
-    
-    
-<%= f.submit class: "btn btn-sm btn-primary" %>
-    
-
-<% end %>
+<%= render 'form' %>
