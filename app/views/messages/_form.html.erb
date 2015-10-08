@@ -1,6 +1,6 @@
 <%= form_for(@message) do |f| %>
   <% if @message.errors.present? %>
-    <div class="alerf alef-danger">
+    <div class="alert alert-danger">
     <%= alert %>
       <ul>
         <% @message.errors.full_messages.each do |full_message| %>
