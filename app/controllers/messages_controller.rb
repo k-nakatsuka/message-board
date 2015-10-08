@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:edit, :update]
+  before_action :set_message, only: [:edit, :update, :destroy]
   def index
     #メッセージを全て取得する。
     @messages = Message.all
@@ -27,6 +27,10 @@ class MessagesController < ApplicationController
       flash.now[:alert] = "メッセージを保存に失敗しました"
       render 'index'
     end
+  end
+  def destroy
+    @message.destroy
+    redirect_to root_path, notice: 'メッセージを削除しました'
   end
   
   private
